@@ -1,8 +1,5 @@
-let pg;
-
 function setup() {
   createCanvas(displayWidth, displayHeight);
-  pg = createGraphics(400, 250);
 }
 
 function draw() {
@@ -12,10 +9,6 @@ function draw() {
   let c = color(150, (height-mouseY)*255/height, 255);
   fill(c);
   noStroke();
-  ellipse(mouseX, mouseY, mouseX/log(mouseX),mouseX/log(mouseX));
-
-  pg.background(51);
-  pg.noFill();
-  pg.stroke(255);
-  pg.ellipse(mouseX - 150, mouseY - 75, 60, 60);
+  var pointerSize = (displayWidth-mouseX/1.5)/10;
+  ellipse(mouseX, mouseY, pointerSize, pointerSize);
 }
