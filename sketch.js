@@ -1,7 +1,7 @@
 let pg;
 
 function setup() {
-  createCanvas(710, 400);
+  createCanvas(displayWidth, displayHeight);
   pg = createGraphics(400, 250);
 }
 
