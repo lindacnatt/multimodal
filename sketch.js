@@ -11,10 +11,12 @@ function avg(t) {
 
 function setup() {
   noCursor()
+  
   createCanvas(displayWidth, displayHeight);
 }
 
 function draw() {
+  fullscreen(true);
   fill(0, 12);
   rect(0, 0, width, height);
   colorMode(HSB, 255);
