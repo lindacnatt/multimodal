@@ -19,6 +19,7 @@ function draw() {
   fullscreen(true);
   fill(0, 12);
   rect(0, 0, width, height);
+  grid()
   colorMode(HSB, 255);
   let c = color(150, (height-mouseY*0.6)*255/height, 175); 
   fill(c);
@@ -29,4 +30,13 @@ function draw() {
   ellipse(avg(lastX), avg(lastY), pointerSize, pointerSize);
   lastX = lastX.slice(lastX.length-30);
   lastY = lastY.slice(lastY.length-30);
+  
+}
+
+function grid() {
+	for (var x = 0; x < displayWidth; x += displayWidth / 24) {
+      stroke(50);
+			strokeWeight(1);
+			line(x, 0, x, displayHeight);
+		}
 }
