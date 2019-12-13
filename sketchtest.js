@@ -29,4 +29,11 @@ function draw() {
   ellipse(avg(lastX), avg(lastY), pointerSize, pointerSize);
   lastX = lastX.slice(lastX.length-30);
   lastY = lastY.slice(lastY.length-30);
+  sketch.grid = function() {
+    for (var x = 0; x < sketch.windowWidth; x += sketch.windowWidth / 24) {
+        sketch.stroke(50);
+        sketch.strokeWeight(1);
+        sketch.line(x, 0, x, sketch.windowHeight);
+      };
+  }
 }
