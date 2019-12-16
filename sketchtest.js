@@ -30,10 +30,11 @@ function draw() {
   lastX = lastX.slice(lastX.length-30);
   lastY = lastY.slice(lastY.length-30);
   grid = function() {
-    for (var x = 0; x < sketch.windowWidth; x += sketch.windowWidth / 24) {
-        sketch.stroke(50);
-        sketch.strokeWeight(1);
-        sketch.line(x, 0, x, sketch.windowHeight);
+    for (var x = 0; x < windowWidth; x += windowWidth / 24) {
+        stroke(50);
+        strokeWeight(1);
+        line(x, 0, x, windowHeight);
       };
   }
+  grid()
 }
