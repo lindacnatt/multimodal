@@ -2,6 +2,7 @@ var guiSketch = new p5(( sketch ) => {
 
 let lastX = [];
 let lastY = [];
+let toneArray = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
   
 sketch.avg = function(t) {
   let sum = 0;
