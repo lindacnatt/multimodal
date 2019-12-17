@@ -11,13 +11,26 @@ sketch.avg = function(t) {
   return sum / t.length;
 };
 
-sketch.grid = function(n) {
-    for (let x = 0; x < sketch.windowWidth; x += sketch.windowWidth / n) {
-        sketch.stroke(50);
-        sketch.strokeWeight(1); 
-        sketch.line(x, 0, x, sketch.windowHeight);
-      }
-  }
+sketch.grid = function (n) {
+  sketch.fill(255);
+  let tone = 0;
+  let colorValue = 0;
+  for (var x = 0; x < sketch.windowWidth; x += sketch.windowWidth /n) {
+    sketch.textSize(26);
+    sketch.text(toneArray[tone], x + 10, sketch.windowHeight);
+    tone += 1;
+    if (tone == 12) {
+      tone = 0
+    };
+    colorValue = colorValue + 20;
+    sketch.stroke(colorValue, 100, 100);
+    sktech.strokeWeight(1);
+    sketch.line(x, 0, x, sketch.windowHeight);
+    if (x == sketch.windowWidth / 2) {
+      colorValue = 0;
+    };
+  };
+}
   sketch.mouseMoved = function() {
     let mouseX = sketch.mouseX;
     let mouseY = sketch.mouseY;
