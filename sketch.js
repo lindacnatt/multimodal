@@ -3,7 +3,6 @@ var guiSketch = new p5(( sketch ) => {
 let lastX = [];
 let lastY = [];
 let toneArray = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-  
 sketch.avg = function(t) {
   let sum = 0;
   for (let item of t) {
@@ -25,7 +24,7 @@ sketch.grid = function (n) {
     };
     colorValue = colorValue + 20;
     sketch.stroke(colorValue, 100, 100);
-    sktech.strokeWeight(1);
+    sketch.strokeWeight(1);
     sketch.line(x, 0, x, sketch.windowHeight);
     if (x == sketch.windowWidth / 2) {
       colorValue = 0;
@@ -35,7 +34,7 @@ sketch.grid = function (n) {
   sketch.mouseMoved = function() {
     let mouseX = sketch.mouseX;
     let mouseY = sketch.mouseY;
-    Bela.data.sendBuffer(0, 'float', [mouseX, mouseY]);
+   
     Bela.control.send({mouseX: mouseX, mouseY: mouseY});
   };
 
@@ -44,6 +43,7 @@ sketch.setup = function() {
   sketch.noCursor();
   sketch.createCanvas(sketch.windowWidth, sketch.windowHeight);
   sketch.background(0);
+   Bela.data.sendBuffer(0, 'float', [sketch.windowWidth, sketch.windowHeight]);
 };
 
 sketch.draw = function() {
@@ -59,7 +59,7 @@ sketch.draw = function() {
   sketch.ellipse(sketch.avg(lastX), sketch.avg(lastY), pointerSize, pointerSize);
   lastX = lastX.slice(lastX.length-30);
   lastY = lastY.slice(lastY.length-30);
-  sketch.grid(5)
+  sketch.grid(24)
   
 };
   
