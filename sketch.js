@@ -26,7 +26,7 @@ sketch.grid = function (n) {
     }
     colorValue += 1;
     sketch.textSize(26);
-    sketch.text(toneArray[tone], x + 10, sketch.windowHeight);
+    sketch.text(toneArray[tone], x + 10, sketch.windowHeight/2);
     tone += 1;
     if (tone == 12) {
       tone = 0

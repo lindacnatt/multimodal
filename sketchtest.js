@@ -44,7 +44,7 @@ function draw() {
       }
       colorValue += 1;
       textSize(26);
-      text(toneArray[tone], x - 9, windowHeight);
+      text(toneArray[tone], x - 9, windowHeight/2);
       tone += 1;
       if (tone == 12) {
         tone = 0
